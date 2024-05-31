@@ -1,26 +1,26 @@
-def converter_base(numero_e, base_origem, base_destino):
-    """Conversor
+# Conversão entre sistemas numéricos sem utilizar funções externas
+def converter(numero, base_origem, base_destino):
+    # Converte o número para decimal
+    numero_decimal = 0
+    numero = str(numero)
+    for i, digito in enumerate(reversed(numero)):
+        if '0' <= digito <= '9':
+            valor = ord(digito) - ord('0')
+        else:
+            valor = ord(digito.upper()) - ord('A') + 10
+        numero_decimal += valor * (base_origem ** i)
 
-    Args:
-        numero_e (_número_): é o número que será convertido pela base escolhida
-        base_origem (base de origem): É  base do numero que ira ser convertido, base hexadecimal, decimal ou binario
-        base_destino (base de destino): É a base que deseja ser convertida, base hexadecimal ou decimal ou binaria
+    # Converte o número decimal para a base de destino
+    if base_destino == 10:
+        return str(numero_decimal)
 
-    Returns:
-        num_base_destino: é já o número convertido pela base desejada
-    """
-    hex_map = {10: 'A', 11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F'}
-    num_dec = 0
-    for i, digito in enumerate(reversed(str(numero_e))):
-        num_dec += int(digito) * (base_origem ** i)
+    resultado = ""
+    while numero_decimal > 0:
+        resto = numero_decimal % base_destino
+        if resto < 10:
+            resultado = chr(resto + ord('0')) + resultado
+        else:
+            resultado = chr(resto - 10 + ord('A')) + resultado
+        numero_decimal //= base_destino
 
-    num_base_destino = ''
-    while num_dec > 0:
-        digito = num_dec % base_destino
-        if 10 <= digito <= 15:
-            digito = hex_map[digito]
-        num_base_destino = str(digito) + num_base_destino
-        num_dec //= base_destino
-
-    return num_base_destino
-
+    return resultado or "0"

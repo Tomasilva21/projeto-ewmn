@@ -1,21 +1,10 @@
-
+# Geração de código de Gray
 def gray_code(n):
-    
-    """Criador da tabela de N Gray
-
-    Returns:
-        gray: Ira mandar print com a tabela
-    """
-
     gray = ['0', '1']
-
     for i in range(2, n + 1):
         gray = gray + gray[::-1]
-
-        for j in range(0, 1 << (i - 1)):
+        for j in range(len(gray) // 2):
             gray[j] = '0' + gray[j]
-
-        for j in range(1 << (i - 1), 1 << i):
+        for j in range(len(gray) // 2, len(gray)):
             gray[j] = '1' + gray[j]
-
     return gray

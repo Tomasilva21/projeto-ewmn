@@ -4,41 +4,38 @@ body {
     font-family: Arial, sans-serif;
 }
 
-nav {
+.navbar {
     background-color: #333;
-    padding: 10px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+.navbar-brand {
+    color: #e6e6e6 !important;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 10px;
+.nav-link {
+    color: #e6e6e6 !important;
 }
 
-nav ul li a {
-    color: #e6e6e6;
-    text-decoration: none;
+.nav-link.active {
+    color: #b19cd9 !important;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.content {
+.container {
     padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+}
+
+h1, p {
+    color: #e6e6e6;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+    margin-top: 20px;
 }
 
 label {
-    margin-top: 10px;
+    color: #e6e6e6;
 }
 
 input, select, button {
