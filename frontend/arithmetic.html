@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações Aritméticas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="arithmetic.html">Operações Aritméticas</a></li>
+            <li><a href="gray_code.html">Tabela de Gray</a></li>
+            <li><a href="conversion.html">Conversão Numérica</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Operações Aritméticas</h1>
+        <form id="arithmetic-form">
+            <label for="num1">Número 1:</label>
+            <input type="text" id="num1" name="num1">
+            <label for="num2">Número 2:</label>
+            <input type="text" id="num2" name="num2">
+            <label for="operacao">Operação:</label>
+            <select id="operacao" name="operacao">
+                <option value="soma">Soma</option>
+                <option value="subtracao">Subtração</option>
+            </select>
+            <label for="base_final">Base Final:</label>
+            <input type="text" id="base_final" name="base_final">
+            <button type="submit">Calcular</button>
+        </form>
+        <div id="arithmetic-result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
